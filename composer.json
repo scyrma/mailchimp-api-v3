@@ -1,5 +1,5 @@
 {
-  "name":"oneup/mailchimp-api-v3",
+  "name":"scyrma/mailchimp-api-v3",
   "description":"Simple PHP library for MailChimp API V3",
   "keywords":["mailchimp", "api", "v3", "email", "marketing", "services"],
   "type":"library",

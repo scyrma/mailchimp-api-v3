@@ -28,7 +28,7 @@ class Client
         ];
 
         $this->client = new GuzzleClient([
-            'base_url' => $this->apiEndpoint,
+            'base_uri' => $this->apiEndpoint,
         ]);
     }
 
@@ -39,7 +39,7 @@ class Client
 
         switch ($type) {
             case 'post':
-                $request = $this->client->createRequest('POST', $uri, [
+                $request = $this->client->request('POST', $uri, [
                     'json' => $args,
                     'timeout' => $timeout,
                     'headers' => $this->headers,
@@ -47,7 +47,7 @@ class Client
                 break;
 
             case 'patch':
-                $request = $this->client->createRequest('PATCH', $uri, [
+                $request = $this->client->request('PATCH', $uri, [
                     'body' => json_encode($args),
                     'timeout' => $timeout,
                     'headers' => $this->headers,
@@ -55,7 +55,7 @@ class Client
                 break;
 
             case 'put':
-                $request = $this->client->createRequest('PUT', $uri, [
+                $request = $this->client->request('PUT', $uri, [
                     'query' => $args,
                     'timeout' => $timeout,
                     'headers' => $this->headers,
@@ -63,7 +63,7 @@ class Client
                 break;
 
             case 'delete':
-                $request = $this->client->createRequest('DELETE', $uri, [
+                $request = $this->client->request('DELETE', $uri, [
                     'query' => $args,
                     'timeout' => $timeout,
                     'headers' => $this->headers,
@@ -72,7 +72,7 @@ class Client
 
             case 'get':
             default:
-                $request = $this->client->createRequest('GET', $uri, [
+                $request = $this->client->request('GET', $uri, [
                     'query' => $args,
                     'timeout' => $timeout,
                     'headers' => $this->headers,
